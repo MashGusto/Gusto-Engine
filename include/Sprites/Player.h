@@ -15,7 +15,8 @@
 class Player
 {
   private:
-    float m_x, m_y, m_width, m_height;
+    Vector2f m_position;
+    Vector2f m_size;
     Shader m_shader;
     unsigned int m_texture;
     float vertices[20];

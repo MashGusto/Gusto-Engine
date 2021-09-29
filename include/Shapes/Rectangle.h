@@ -17,8 +17,8 @@
 class Rectangle
 {
   private:
-    float m_x, m_y, m_width, m_height;
-    float m_r, m_g, m_b;
+    Vector2f m_position, m_size;
+    Color m_color;
     Shader m_shader;
     float vertices[24];
 

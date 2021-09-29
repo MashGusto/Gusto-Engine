@@ -1,21 +1,21 @@
 #include "Shapes/Rectangle.h"
 
 // Takes in the position, size and color of the rectangle shape, and assigns the values to their respective data members.
-Rectangle::Rectangle(Vector2f pos, Vector2f size, Color color) : m_x(pos.getX()), m_y(pos.getY()), m_width(size.getX()), m_height(size.getY()), m_r(color.getRed()), m_g(color.getGreen()), m_b(color.getBlue()), m_shader(FileManager::getShader("Color/vertexShader.glsl"), FileManager::getShader("Color/fragmentShader.glsl"))
+Rectangle::Rectangle(Vector2f pos, Vector2f size, Color color) : m_position(pos), m_size(size), m_color(color), m_shader(FileManager::getShader("Color/vertexShader.glsl"), FileManager::getShader("Color/fragmentShader.glsl"))
 {
   // Set the vertices of the rectangle according to its position and size.
 
   // Positions
-  vertices[0]  = m_x,           vertices[1]  = m_y,            vertices[2]  = 0.f;
-  vertices[6]  = m_x + m_width, vertices[7]  = m_y,            vertices[8]  = 0.f;
-  vertices[12] = m_x + m_width, vertices[13] = m_y - m_height, vertices[14] = 0.f;
-  vertices[18] = m_x,           vertices[19] = m_y - m_height, vertices[20] = 0.f;
+  vertices[0]  = m_position.getX(),                 vertices[1]  = m_position.getY(),                 vertices[2]  = 0.f;
+  vertices[6]  = m_position.getX() + m_size.getX(), vertices[7]  = m_position.getY(),                 vertices[8]  = 0.f;
+  vertices[12] = m_position.getX() + m_size.getX(), vertices[13] = m_position.getY() - m_size.getY(), vertices[14] = 0.f;
+  vertices[18] = m_position.getX(),                 vertices[19] = m_position.getY() - m_size.getY(), vertices[20] = 0.f;
   
   // Colors
-  vertices[3]  = m_r, vertices[4]  = m_g, vertices[5]  = m_b;
-  vertices[9]  = m_r, vertices[10] = m_g, vertices[11] = m_b;
-  vertices[15] = m_r, vertices[16] = m_g, vertices[17] = m_b;
-  vertices[21] = m_r, vertices[22] = m_g, vertices[23] = m_b;
+  vertices[3]  = m_color.getRed(), vertices[4]  = m_color.getGreen(), vertices[5]  = m_color.getBlue();
+  vertices[9]  = m_color.getRed(), vertices[10] = m_color.getGreen(), vertices[11] = m_color.getBlue();
+  vertices[15] = m_color.getRed(), vertices[16] = m_color.getGreen(), vertices[17] = m_color.getBlue();
+  vertices[21] = m_color.getRed(), vertices[22] = m_color.getGreen(), vertices[23] = m_color.getBlue();
 
   // Generate buffers for the rectangle, and assign attributes to it, to be used by its shaders.
   glGenBuffers(1, &vbo);
@@ -36,13 +36,13 @@ Rectangle::Rectangle(Vector2f pos, Vector2f size, Color color) : m_x(pos.getX())
 void Rectangle::move(GLFWwindow *window)
 {
   if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    m_y += 0.001f;
+    m_position += Vector2f(0.f, 0.001f);
   if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    m_x -= 0.001f;
+    m_position += Vector2f(-0.001f, 0.f);
   if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    m_y -= 0.001f;
+    m_position += Vector2f(0.f, -0.001f);
   if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    m_x += 0.001f;
+    m_position += Vector2f(0.001f, 0.f);
 }
 
 // Draw the rectangle on to the screen, on the rectangle's current position.
@@ -53,10 +53,10 @@ void Rectangle::draw(GLFWwindow *window)
   move(window);
 
   // Repositions the vertices, according to current position.
-  vertices[0] = m_x,           vertices[1] = m_y;
-  vertices[6] = m_x + m_width, vertices[7] = m_y;
-  vertices[12] = m_x + m_width, vertices[13] = m_y - m_height;
-  vertices[18] = m_x,           vertices[19] = m_y - m_height;
+  vertices[0]  = m_position.getX(),                 vertices[1]  = m_position.getY();
+  vertices[6]  = m_position.getX() + m_size.getX(), vertices[7]  = m_position.getY();
+  vertices[12] = m_position.getX() + m_size.getX(), vertices[13] = m_position.getY() - m_size.getY();
+  vertices[18] = m_position.getX(),                 vertices[19] = m_position.getY() - m_size.getY();
   
   // Make the rectangle's shader the shader to use to draw it.
   m_shader.use();
@@ -70,7 +70,7 @@ void Rectangle::draw(GLFWwindow *window)
 }
 
 // Returns a vector value of the current position of the rectangle.
-Vector2f Rectangle::getPosition() { return Vector2f(m_x, m_y); }
+Vector2f Rectangle::getPosition() { return m_position; }
 
 // Returns a vector value of the size of the rectangle.
-Vector2f Rectangle::getSize() { return Vector2f(m_width, m_height); }
+Vector2f Rectangle::getSize() { return m_size; }

@@ -55,7 +55,7 @@ int main()
   Player player(Vector2f(0.f, 0.f), Vector2f(0.1f, 0.1f), FileManager::getImage("red_ball.png"), 1.f);
   Rectangle rect(Vector2f(-0.5f, 0.5f), Vector2f(0.25f, 0.25f), Color(0.f, 1.f, 1.f));
   Polygon circle(Vector2f(0.5f, 0.5f), 0.5f, 25, Color(0.f, 0.f, 1.f));
-  
+
   glClearColor(1.f, 1.f, 1.f, 1.f); // Set the background color to white
 
   // Enable background transparency in loading png textures

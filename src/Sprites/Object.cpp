@@ -1,7 +1,7 @@
 #include "Sprites/Object.h"
 
 // Takes in the position, size and texture of the immovable sprite, and assigns the values to their respective data members.
-Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float textureImageScale) : m_x(pos.getX()), m_y(pos.getY()), m_width(size.getX()), m_height(size.getY()), m_shader(FileManager::getShader("Texture/vertexShader.glsl"), FileManager::getShader("Texture/fragmentShader.glsl"))
+Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float textureImageScale) : m_position(pos), m_size(size), m_shader(FileManager::getShader("Texture/vertexShader.glsl"), FileManager::getShader("Texture/fragmentShader.glsl"))
 {
   // Assigns the given texture's id to a data member of the sprite.
   Texture texture(textureImagePath);
@@ -10,16 +10,16 @@ Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float 
   // Set the positions of the vertices of the sprite according to its positions.
 
   // Positions
-  vertices[0]  = m_x,           vertices[1]  = m_y,            vertices[2]  = 0.f;
-  vertices[5]  = m_x + m_width, vertices[6]  = m_y,            vertices[7]  = 0.f;
-  vertices[10] = m_x + m_width, vertices[11] = m_y - m_height, vertices[12] = 0.f;
-  vertices[15] = m_x,           vertices[16] = m_y - m_height, vertices[17] = 0.f;
+  vertices[0]  = m_position.getX(),                 vertices[1]  = m_position.getY(),                 vertices[2]  = 0.f;
+  vertices[5]  = m_position.getX() + m_size.getX(), vertices[6]  = m_position.getY(),                 vertices[7]  = 0.f;
+  vertices[10] = m_position.getX() + m_size.getX(), vertices[11] = m_position.getY() - m_size.getY(), vertices[12] = 0.f;
+  vertices[15] = m_position.getX(),                 vertices[16] = m_position.getY() - m_size.getY(), vertices[17] = 0.f;
   
   // Texture Coordinates
-  vertices[3] = 0.f, vertices[4] = m_height/textureImageScale;
-  vertices[8] = m_width/textureImageScale, vertices[9] = m_height/textureImageScale;
-  vertices[13] = m_width/textureImageScale, vertices[14] = 0.f;
-  vertices[18] = 0.f, vertices[19] = 0.f;
+  vertices[3]  = 0.f,                                vertices[4]  = m_size.getY() / textureImageScale;
+  vertices[8]  = m_size.getX() / textureImageScale,  vertices[9]  = m_size.getY() / textureImageScale;
+  vertices[13] = m_size.getX() / textureImageScale,  vertices[14] = 0.f;
+  vertices[18] = 0.f,                                vertices[19] = 0.f;
   
   // Generate buffers for the sprite, assign the vertex values to attributes to be used by the shader.
   glGenBuffers(1, &vbo);
@@ -51,7 +51,7 @@ void Object::draw(GLFWwindow *window)
 }
 
 // Returns a vector value of the position of the sprite
-Vector2f Object::getPosition() { return Vector2f(m_x, m_y); }
+Vector2f Object::getPosition() { return m_position; }
 
 // Returns a vector value of the size of the sprite
-Vector2f Object::getSize() { return Vector2f(m_width, m_height); }
+Vector2f Object::getSize() { return m_size; }

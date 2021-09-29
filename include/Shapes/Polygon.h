@@ -18,10 +18,10 @@
 class Polygon
 {
   private:
-    float m_x, m_y;
+    Vector2f m_position;
+    Color m_color;
     float m_radius;
     unsigned int m_vertexCount;
-    float m_r, m_g, m_b;
     Shader m_shader;
     unsigned int vbo;
     unsigned int vao;

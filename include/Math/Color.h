@@ -11,9 +11,16 @@ class Color
   public:
     Color(float r, float g, float b);
     Color(float r, float g, float b, float a);
+
     float getRed();
     float getGreen();
     float getBlue();
     float getAlpha();
-    float& operator[](int index);
+
+    void setRed(float r);
+    void setGreen(float g);
+    void setBlue(float b);
+    void setAlpha(float a);
+
+    float& operator [] (int index);
 };

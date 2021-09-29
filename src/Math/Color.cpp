@@ -18,8 +18,20 @@ float Color::getBlue() { return m_b; }
 // Get the a value of the color.
 float Color::getAlpha() { return m_a; }
 
+// Set the r value of the color.
+void Color::setRed(float r) { m_r = r; }
+
+// Set the g value of the color.
+void Color::setGreen(float g) { m_g = g; }
+
+// Set the b value of the color.
+void Color::setBlue(float b) { m_b = b; }
+
+// Set the a value of the color.
+void Color::setAlpha(float a) { m_a = a; }
+
 // Overloads the subscript([]) operator to return the color values according to index.
-float& Color::operator[](int index)
+float& Color::operator [] (int index)
 {
   if(index == 1)
     return m_r;

@@ -6,29 +6,29 @@
 #include <cmath>
 
 // Takes in the position, radius, number of vertices, and color of the polygon, and assigns those values to respective data members.
-Polygon::Polygon(Vector2f pos, float radius, unsigned int vertexCount, Color color) : m_x(pos.getX()), m_y(pos.getY()), m_radius(radius), m_vertexCount(vertexCount), m_r(color.getRed()), m_g(color.getGreen()), m_b(color.getBlue()), m_shader(FileManager::getShader("Color/vertexShader.glsl"), FileManager::getShader("Color/fragmentShader.glsl"))
+Polygon::Polygon(Vector2f pos, float radius, unsigned int vertexCount, Color color) : m_position(pos), m_radius(radius), m_vertexCount(vertexCount), m_color(color), m_shader(FileManager::getShader("Color/vertexShader.glsl"), FileManager::getShader("Color/fragmentShader.glsl"))
 {
   // The center of the polygon
-  vertices.push_back(m_x);
-  vertices.push_back(m_y);
+  vertices.push_back(m_position.getX());
+  vertices.push_back(m_position.getY());
   vertices.push_back(0.f);
-  vertices.push_back(m_r);
-  vertices.push_back(m_g);
-  vertices.push_back(m_b);
+  vertices.push_back(m_color.getRed());
+  vertices.push_back(m_color.getGreen());
+  vertices.push_back(m_color.getBlue());
 
   for(int i = 0; i < m_vertexCount; i++)
   {
     // Setting the vertices according to its radius, and calculated using sin and cos.
     
     // position
-    vertices.push_back(m_x + (m_radius * cosf(i * (M_PI * 2) / m_vertexCount)));
-    vertices.push_back(m_y + (m_radius * sinf(i * (M_PI * 2) / m_vertexCount)));
+    vertices.push_back(m_position.getX() + (m_radius * cosf(i * (M_PI * 2) / m_vertexCount)));
+    vertices.push_back(m_position.getY() + (m_radius * sinf(i * (M_PI * 2) / m_vertexCount)));
     vertices.push_back(0.f);
     
     // color
-    vertices.push_back(m_r);
-    vertices.push_back(m_g);
-    vertices.push_back(m_b);
+    vertices.push_back(m_color.getRed());
+    vertices.push_back(m_color.getGreen());
+    vertices.push_back(m_color.getBlue());
 
     indices.push_back(i+1);
     indices.push_back(0);
@@ -65,10 +65,10 @@ void Polygon::move(GLFWwindow *window)
     glfwGetCursorPos(window, &mouseX, &mouseY);
     mouseX = -1.f + 2.f*mouseX / windowWidth;
     mouseY = 1.f - 2.f*mouseY / windowHeight;
-    if(mouseX < m_x + m_radius && mouseX > m_x - m_radius && mouseY < m_y + m_radius && mouseY > m_y - m_radius)
+    if(mouseX < m_position.getX() + m_radius && mouseX > m_position.getX() - m_radius && mouseY < m_position.getY() + m_radius && mouseY > m_position.getY() - m_radius)
     {
-      m_x = mouseX;
-      m_y = mouseY;
+      m_position.setX(mouseX);
+      m_position.setY(mouseY);
     }
   }
 }
@@ -81,11 +81,11 @@ void Polygon::draw(GLFWwindow *window)
   move(window);
   
   // Repositions the vertices, according to current position.
-  vertices[0] = m_x, vertices[1] = m_y;
+  vertices[0] = m_position.getX(), vertices[1] = m_position.getY();
   for(int i = 0; i < m_vertexCount; i++)
   {
-    vertices[(i*6)+6] = m_x + (m_radius * cosf(i * (M_PI * 2) / m_vertexCount));
-    vertices[(i*6)+7] = m_y + (m_radius * sinf(i * (M_PI * 2) / m_vertexCount));
+    vertices[(i*6)+6] = m_position.getX() + (m_radius * cosf(i * (M_PI * 2) / m_vertexCount));
+    vertices[(i*6)+7] = m_position.getY() + (m_radius * sinf(i * (M_PI * 2) / m_vertexCount));
   }
   
   // Rebuffer the positions, and set its shader to be used to render the shape.
@@ -100,7 +100,7 @@ void Polygon::draw(GLFWwindow *window)
 }
 
 // Get a vector value of the shape's current position.
-Vector2f Polygon::getPosition() { return Vector2f(m_x, m_y); }
+Vector2f Polygon::getPosition() { return m_position; }
 
 // Get the radius of the polygon.
 float Polygon::getRadius() { return m_radius; }

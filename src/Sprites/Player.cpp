@@ -1,7 +1,7 @@
 #include "Sprites/Player.h"
 
 // Takes in the position, size and texture of the movable sprite, and assigns the values to their respective data members.
-Player::Player(Vector2f pos, Vector2f size, std::string textureImagePath, float textureImageScale) : m_x(pos.getX()), m_y(pos.getY()), m_width(size.getX()), m_height(size.getY()), m_shader(FileManager::getShader("Texture/vertexShader.glsl"), FileManager::getShader("Texture/fragmentShader.glsl"))
+Player::Player(Vector2f pos, Vector2f size, std::string textureImagePath, float textureImageScale) : m_position(pos), m_size(size), m_shader(FileManager::getShader("Texture/vertexShader.glsl"), FileManager::getShader("Texture/fragmentShader.glsl"))
 {
   // Assigns the given texture's id to a data member of the sprite.
   Texture texture(textureImagePath);
@@ -10,14 +10,14 @@ Player::Player(Vector2f pos, Vector2f size, std::string textureImagePath, float 
   // Set the positions of the vertices of the sprite according to its positions.
 
   // Positions
-  vertices[0]  = m_x,           vertices[1]  = m_y,            vertices[2]  = 0.f;
-  vertices[5]  = m_x + m_width, vertices[6]  = m_y,            vertices[7]  = 0.f;
-  vertices[10] = m_x + m_width, vertices[11] = m_y - m_height, vertices[12] = 0.f;
-  vertices[15] = m_x,           vertices[16] = m_y - m_height, vertices[17] = 0.f;
+  vertices[0]  = m_position.getX(),                 vertices[1]  = m_position.getY(),                 vertices[2]  = 0.f;
+  vertices[5]  = m_position.getX() + m_size.getX(), vertices[6]  = m_position.getY(),                 vertices[7]  = 0.f;
+  vertices[10] = m_position.getX() + m_size.getX(), vertices[11] = m_position.getY() - m_size.getY(), vertices[12] = 0.f;
+  vertices[15] = m_position.getX(),                 vertices[16] = m_position.getY() - m_size.getY(), vertices[17] = 0.f;
   
   // Texture Coordinates
-  vertices[3] = 0.f, vertices[4] = 1.f;
-  vertices[8] = 1.f, vertices[9] = 1.f;
+  vertices[3]  = 0.f, vertices[4]  = 1.f;
+  vertices[8]  = 1.f, vertices[9]  = 1.f;
   vertices[13] = 1.f, vertices[14] = 0.f;
   vertices[18] = 0.f, vertices[19] = 0.f;
 
@@ -40,13 +40,13 @@ Player::Player(Vector2f pos, Vector2f size, std::string textureImagePath, float 
 void Player::move(GLFWwindow *window)
 {
   if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    m_y += 0.001f;
+    m_position += Vector2f(0.f, 0.001f);
   if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    m_x -= 0.001f;
+    m_position += Vector2f(-0.001f, 0.f);
   if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    m_y -= 0.001f;
+    m_position += Vector2f(0.f, -0.001f);
   if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    m_x += 0.001f;
+    m_position += Vector2f(0.001f, 0.f);
 }
 
 // Draws the sprite to the window.
@@ -57,10 +57,10 @@ void Player::draw(GLFWwindow *window)
   move(window);
   
   // Reassigns the  vertex positions of the sprite, according to current position.
-  vertices[0] = m_x,           vertices[1] = m_y;
-  vertices[5] = m_x + m_width, vertices[6] = m_y;
-  vertices[10] = m_x + m_width, vertices[11] = m_y - m_height;
-  vertices[15] = m_x,           vertices[16] = m_y - m_height;
+  vertices[0]  = m_position.getX(),                 vertices[1]  = m_position.getY();
+  vertices[5]  = m_position.getX() + m_size.getX(), vertices[6]  = m_position.getY();
+  vertices[10] = m_position.getX() + m_size.getX(), vertices[11] = m_position.getY() - m_size.getY();
+  vertices[15] = m_position.getX(),                 vertices[16] = m_position.getY() - m_size.getY();
   
   // Make the sprite's shader the shader to use to draw it.
   m_shader.use();
@@ -75,7 +75,7 @@ void Player::draw(GLFWwindow *window)
 }
 
 // Returns a vector value of the current position of the sprite.
-Vector2f Player::getPosition() { return Vector2f(m_x, m_y); }
+Vector2f Player::getPosition() { return m_position; }
 
 // Returns a vector value of the size of the sprite.
-Vector2f Player::getSize() { return Vector2f(m_width, m_height); }
+Vector2f Player::getSize() { return m_size; }
