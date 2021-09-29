@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mashgusto/Dev/C++/OpenGL/Prototype
+CMAKE_SOURCE_DIR = /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mashgusto/Dev/C++/OpenGL/Prototype/bin
+CMAKE_BINARY_DIR = /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/game.dir/depend.make
@@ -72,170 +72,170 @@ include CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Components/FileManager.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Components/FileManager.cpp.o: ../src/Components/FileManager.cpp
 CMakeFiles/game.dir/src/Components/FileManager.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/Components/FileManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/FileManager.cpp.o -MF CMakeFiles/game.dir/src/Components/FileManager.cpp.o.d -o CMakeFiles/game.dir/src/Components/FileManager.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/FileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/Components/FileManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/FileManager.cpp.o -MF CMakeFiles/game.dir/src/Components/FileManager.cpp.o.d -o CMakeFiles/game.dir/src/Components/FileManager.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/FileManager.cpp
 
 CMakeFiles/game.dir/src/Components/FileManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Components/FileManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/FileManager.cpp > CMakeFiles/game.dir/src/Components/FileManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/FileManager.cpp > CMakeFiles/game.dir/src/Components/FileManager.cpp.i
 
 CMakeFiles/game.dir/src/Components/FileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Components/FileManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/FileManager.cpp -o CMakeFiles/game.dir/src/Components/FileManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/FileManager.cpp -o CMakeFiles/game.dir/src/Components/FileManager.cpp.s
 
 CMakeFiles/game.dir/src/Components/Shader.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Components/Shader.cpp.o: ../src/Components/Shader.cpp
 CMakeFiles/game.dir/src/Components/Shader.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/Components/Shader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/Shader.cpp.o -MF CMakeFiles/game.dir/src/Components/Shader.cpp.o.d -o CMakeFiles/game.dir/src/Components/Shader.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/Components/Shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/Shader.cpp.o -MF CMakeFiles/game.dir/src/Components/Shader.cpp.o.d -o CMakeFiles/game.dir/src/Components/Shader.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Shader.cpp
 
 CMakeFiles/game.dir/src/Components/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Components/Shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Shader.cpp > CMakeFiles/game.dir/src/Components/Shader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Shader.cpp > CMakeFiles/game.dir/src/Components/Shader.cpp.i
 
 CMakeFiles/game.dir/src/Components/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Components/Shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Shader.cpp -o CMakeFiles/game.dir/src/Components/Shader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Shader.cpp -o CMakeFiles/game.dir/src/Components/Shader.cpp.s
 
 CMakeFiles/game.dir/src/Components/Texture.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Components/Texture.cpp.o: ../src/Components/Texture.cpp
 CMakeFiles/game.dir/src/Components/Texture.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/Components/Texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/Texture.cpp.o -MF CMakeFiles/game.dir/src/Components/Texture.cpp.o.d -o CMakeFiles/game.dir/src/Components/Texture.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/Components/Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Components/Texture.cpp.o -MF CMakeFiles/game.dir/src/Components/Texture.cpp.o.d -o CMakeFiles/game.dir/src/Components/Texture.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Texture.cpp
 
 CMakeFiles/game.dir/src/Components/Texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Components/Texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Texture.cpp > CMakeFiles/game.dir/src/Components/Texture.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Texture.cpp > CMakeFiles/game.dir/src/Components/Texture.cpp.i
 
 CMakeFiles/game.dir/src/Components/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Components/Texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Texture.cpp -o CMakeFiles/game.dir/src/Components/Texture.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Texture.cpp -o CMakeFiles/game.dir/src/Components/Texture.cpp.s
 
 CMakeFiles/game.dir/src/Dependencies/glad.c.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Dependencies/glad.c.o: ../src/Dependencies/glad.c
 CMakeFiles/game.dir/src/Dependencies/glad.c.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/game.dir/src/Dependencies/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/game.dir/src/Dependencies/glad.c.o -MF CMakeFiles/game.dir/src/Dependencies/glad.c.o.d -o CMakeFiles/game.dir/src/Dependencies/glad.c.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Dependencies/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/game.dir/src/Dependencies/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/game.dir/src/Dependencies/glad.c.o -MF CMakeFiles/game.dir/src/Dependencies/glad.c.o.d -o CMakeFiles/game.dir/src/Dependencies/glad.c.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Dependencies/glad.c
 
 CMakeFiles/game.dir/src/Dependencies/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/game.dir/src/Dependencies/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Dependencies/glad.c > CMakeFiles/game.dir/src/Dependencies/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Dependencies/glad.c > CMakeFiles/game.dir/src/Dependencies/glad.c.i
 
 CMakeFiles/game.dir/src/Dependencies/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/game.dir/src/Dependencies/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Dependencies/glad.c -o CMakeFiles/game.dir/src/Dependencies/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Dependencies/glad.c -o CMakeFiles/game.dir/src/Dependencies/glad.c.s
 
 CMakeFiles/game.dir/src/Math/Color.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Math/Color.cpp.o: ../src/Math/Color.cpp
 CMakeFiles/game.dir/src/Math/Color.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/Math/Color.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Math/Color.cpp.o -MF CMakeFiles/game.dir/src/Math/Color.cpp.o.d -o CMakeFiles/game.dir/src/Math/Color.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/Math/Color.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Math/Color.cpp.o -MF CMakeFiles/game.dir/src/Math/Color.cpp.o.d -o CMakeFiles/game.dir/src/Math/Color.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Color.cpp
 
 CMakeFiles/game.dir/src/Math/Color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Math/Color.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Color.cpp > CMakeFiles/game.dir/src/Math/Color.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Color.cpp > CMakeFiles/game.dir/src/Math/Color.cpp.i
 
 CMakeFiles/game.dir/src/Math/Color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Math/Color.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Color.cpp -o CMakeFiles/game.dir/src/Math/Color.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Color.cpp -o CMakeFiles/game.dir/src/Math/Color.cpp.s
 
 CMakeFiles/game.dir/src/Math/Vector.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Math/Vector.cpp.o: ../src/Math/Vector.cpp
 CMakeFiles/game.dir/src/Math/Vector.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/Math/Vector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Math/Vector.cpp.o -MF CMakeFiles/game.dir/src/Math/Vector.cpp.o.d -o CMakeFiles/game.dir/src/Math/Vector.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/Math/Vector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Math/Vector.cpp.o -MF CMakeFiles/game.dir/src/Math/Vector.cpp.o.d -o CMakeFiles/game.dir/src/Math/Vector.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Vector.cpp
 
 CMakeFiles/game.dir/src/Math/Vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Math/Vector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Vector.cpp > CMakeFiles/game.dir/src/Math/Vector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Vector.cpp > CMakeFiles/game.dir/src/Math/Vector.cpp.i
 
 CMakeFiles/game.dir/src/Math/Vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Math/Vector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Math/Vector.cpp -o CMakeFiles/game.dir/src/Math/Vector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Math/Vector.cpp -o CMakeFiles/game.dir/src/Math/Vector.cpp.s
 
 CMakeFiles/game.dir/src/Physics/Space.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Physics/Space.cpp.o: ../src/Physics/Space.cpp
 CMakeFiles/game.dir/src/Physics/Space.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/Physics/Space.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Physics/Space.cpp.o -MF CMakeFiles/game.dir/src/Physics/Space.cpp.o.d -o CMakeFiles/game.dir/src/Physics/Space.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Physics/Space.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/Physics/Space.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Physics/Space.cpp.o -MF CMakeFiles/game.dir/src/Physics/Space.cpp.o.d -o CMakeFiles/game.dir/src/Physics/Space.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Physics/Space.cpp
 
 CMakeFiles/game.dir/src/Physics/Space.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Physics/Space.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Physics/Space.cpp > CMakeFiles/game.dir/src/Physics/Space.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Physics/Space.cpp > CMakeFiles/game.dir/src/Physics/Space.cpp.i
 
 CMakeFiles/game.dir/src/Physics/Space.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Physics/Space.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Physics/Space.cpp -o CMakeFiles/game.dir/src/Physics/Space.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Physics/Space.cpp -o CMakeFiles/game.dir/src/Physics/Space.cpp.s
 
 CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o: ../src/Shapes/Polygon.cpp
 CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o -MF CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o.d -o CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Polygon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o -MF CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o.d -o CMakeFiles/game.dir/src/Shapes/Polygon.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Polygon.cpp
 
 CMakeFiles/game.dir/src/Shapes/Polygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Shapes/Polygon.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Polygon.cpp > CMakeFiles/game.dir/src/Shapes/Polygon.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Polygon.cpp > CMakeFiles/game.dir/src/Shapes/Polygon.cpp.i
 
 CMakeFiles/game.dir/src/Shapes/Polygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Shapes/Polygon.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Polygon.cpp -o CMakeFiles/game.dir/src/Shapes/Polygon.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Polygon.cpp -o CMakeFiles/game.dir/src/Shapes/Polygon.cpp.s
 
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o: ../src/Shapes/Rectangle.cpp
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o -MF CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o.d -o CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Rectangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o -MF CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o.d -o CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Rectangle.cpp
 
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Rectangle.cpp > CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Rectangle.cpp > CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.i
 
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Rectangle.cpp -o CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Rectangle.cpp -o CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.s
 
 CMakeFiles/game.dir/src/Sprites/Object.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Sprites/Object.cpp.o: ../src/Sprites/Object.cpp
 CMakeFiles/game.dir/src/Sprites/Object.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.dir/src/Sprites/Object.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Sprites/Object.cpp.o -MF CMakeFiles/game.dir/src/Sprites/Object.cpp.o.d -o CMakeFiles/game.dir/src/Sprites/Object.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.dir/src/Sprites/Object.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Sprites/Object.cpp.o -MF CMakeFiles/game.dir/src/Sprites/Object.cpp.o.d -o CMakeFiles/game.dir/src/Sprites/Object.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Object.cpp
 
 CMakeFiles/game.dir/src/Sprites/Object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Sprites/Object.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Object.cpp > CMakeFiles/game.dir/src/Sprites/Object.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Object.cpp > CMakeFiles/game.dir/src/Sprites/Object.cpp.i
 
 CMakeFiles/game.dir/src/Sprites/Object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Sprites/Object.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Object.cpp -o CMakeFiles/game.dir/src/Sprites/Object.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Object.cpp -o CMakeFiles/game.dir/src/Sprites/Object.cpp.s
 
 CMakeFiles/game.dir/src/Sprites/Player.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Sprites/Player.cpp.o: ../src/Sprites/Player.cpp
 CMakeFiles/game.dir/src/Sprites/Player.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.dir/src/Sprites/Player.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Sprites/Player.cpp.o -MF CMakeFiles/game.dir/src/Sprites/Player.cpp.o.d -o CMakeFiles/game.dir/src/Sprites/Player.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.dir/src/Sprites/Player.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/Sprites/Player.cpp.o -MF CMakeFiles/game.dir/src/Sprites/Player.cpp.o.d -o CMakeFiles/game.dir/src/Sprites/Player.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Player.cpp
 
 CMakeFiles/game.dir/src/Sprites/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Sprites/Player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Player.cpp > CMakeFiles/game.dir/src/Sprites/Player.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Player.cpp > CMakeFiles/game.dir/src/Sprites/Player.cpp.i
 
 CMakeFiles/game.dir/src/Sprites/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Sprites/Player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Player.cpp -o CMakeFiles/game.dir/src/Sprites/Player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Player.cpp -o CMakeFiles/game.dir/src/Sprites/Player.cpp.s
 
 CMakeFiles/game.dir/src/main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/game.dir/src/main.cpp.o: CMakeFiles/game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/main.cpp.o -MF CMakeFiles/game.dir/src/main.cpp.o.d -o CMakeFiles/game.dir/src/main.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Prototype/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game.dir/src/main.cpp.o -MF CMakeFiles/game.dir/src/main.cpp.o.d -o CMakeFiles/game.dir/src/main.cpp.o -c /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/main.cpp
 
 CMakeFiles/game.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Prototype/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
 
 CMakeFiles/game.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Prototype/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
 
 # Object files for target game
 game_OBJECTS = \
@@ -269,7 +269,7 @@ game: CMakeFiles/game.dir/src/Sprites/Player.cpp.o
 game: CMakeFiles/game.dir/src/main.cpp.o
 game: CMakeFiles/game.dir/build.make
 game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -281,6 +281,6 @@ CMakeFiles/game.dir/clean:
 .PHONY : CMakeFiles/game.dir/clean
 
 CMakeFiles/game.dir/depend:
-	cd /home/mashgusto/Dev/C++/OpenGL/Prototype/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mashgusto/Dev/C++/OpenGL/Prototype /home/mashgusto/Dev/C++/OpenGL/Prototype /home/mashgusto/Dev/C++/OpenGL/Prototype/bin /home/mashgusto/Dev/C++/OpenGL/Prototype/bin /home/mashgusto/Dev/C++/OpenGL/Prototype/bin/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/game.dir/depend
 

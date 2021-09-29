@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * A graphical component, that is used to draw a movable sprite at a given position, drawn with a given texture.
+ */
+
 #include "Components/Texture.h"
 #include "Components/Shader.h"
 #include "Components/FileManager.h"

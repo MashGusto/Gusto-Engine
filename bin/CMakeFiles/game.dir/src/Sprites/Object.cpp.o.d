@@ -1,8 +1,8 @@
 CMakeFiles/game.dir/src/Sprites/Object.cpp.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Sprites/Object.cpp \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Sprites/Object.cpp \
  /usr/include/stdc-predef.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Sprites/Object.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Texture.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Sprites/Object.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Texture.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -126,8 +126,8 @@ CMakeFiles/game.dir/src/Sprites/Object.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/basic_string.tcc \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Shader.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/FileManager.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Math/Vector.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Shader.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/FileManager.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Math/Vector.h \
  /usr/include/GL/glew.h /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /usr/include/GLFW/glfw3.h

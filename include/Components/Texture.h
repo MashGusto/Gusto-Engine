@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * The texture class that is implemented on the sprites, to give them a texture from a given image.
+ */
+
 #include <string>
 
 class Texture

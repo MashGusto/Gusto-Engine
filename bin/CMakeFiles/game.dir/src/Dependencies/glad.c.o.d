@@ -1,5 +1,5 @@
 CMakeFiles/game.dir/src/Dependencies/glad.c.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Dependencies/glad.c \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Dependencies/glad.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \

@@ -1,9 +1,13 @@
 #include "Sprites/Object.h"
 
+// Takes in the position, size and texture of the immovable sprite, and assigns the values to their respective data members.
 Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float textureImageScale) : m_x(pos.getX()), m_y(pos.getY()), m_width(size.getX()), m_height(size.getY()), m_shader(FileManager::getShader("Texture/vertexShader.glsl"), FileManager::getShader("Texture/fragmentShader.glsl"))
 {
+  // Assigns the given texture's id to a data member of the sprite.
   Texture texture(textureImagePath);
   m_texture = texture.getTexture();
+
+  // Set the positions of the vertices of the sprite according to its positions.
 
   // Positions
   vertices[0]  = m_x,           vertices[1]  = m_y,            vertices[2]  = 0.f;
@@ -16,7 +20,8 @@ Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float 
   vertices[8] = m_width/textureImageScale, vertices[9] = m_height/textureImageScale;
   vertices[13] = m_width/textureImageScale, vertices[14] = 0.f;
   vertices[18] = 0.f, vertices[19] = 0.f;
-
+  
+  // Generate buffers for the sprite, assign the vertex values to attributes to be used by the shader.
   glGenBuffers(1, &vbo);
   glGenVertexArrays(1, &vao);
   glGenBuffers(1, &ebo);
@@ -31,16 +36,22 @@ Object::Object(Vector2f pos, Vector2f size, std::string textureImagePath, float 
   glEnableVertexAttribArray(1);
 }
 
+// Draws the sprite to the window.
+// To be called each game frame.
 void Object::draw(GLFWwindow *window)
 {
+  // Use the sprite's shader as the one to use to draw it, and rebind the texture.
   m_shader.use();
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
   glBindTexture(GL_TEXTURE_2D, m_texture);
   glBindVertexArray(vao);
+  // Draw the sprite.
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
 }
 
+// Returns a vector value of the position of the sprite
 Vector2f Object::getPosition() { return Vector2f(m_x, m_y); }
 
+// Returns a vector value of the size of the sprite
 Vector2f Object::getSize() { return Vector2f(m_width, m_height); }

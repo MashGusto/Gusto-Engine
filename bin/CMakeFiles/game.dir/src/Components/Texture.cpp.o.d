@@ -1,7 +1,7 @@
 CMakeFiles/game.dir/src/Components/Texture.cpp.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Texture.cpp \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Texture.cpp \
  /usr/include/stdc-predef.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Texture.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Texture.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -125,7 +125,7 @@ CMakeFiles/game.dir/src/Components/Texture.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/basic_string.tcc \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Dependencies/stb_image.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Dependencies/stb_image.h \
  /usr/include/c++/9/stdlib.h /usr/include/string.h /usr/include/strings.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \

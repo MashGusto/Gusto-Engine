@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * A container to hold color values..
+ */
+
 class Color
 {
   private:

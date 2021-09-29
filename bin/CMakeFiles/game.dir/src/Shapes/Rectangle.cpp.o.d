@@ -1,8 +1,8 @@
 CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Shapes/Rectangle.cpp \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Shapes/Rectangle.cpp \
  /usr/include/stdc-predef.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Shapes/Rectangle.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Texture.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Shapes/Rectangle.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Texture.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -126,10 +126,10 @@ CMakeFiles/game.dir/src/Shapes/Rectangle.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/basic_string.tcc \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Shader.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/FileManager.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Math/Vector.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Math/Color.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Shader.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/FileManager.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Math/Vector.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Math/Color.h \
  /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
  /usr/include/c++/9/bits/stl_relops.h \

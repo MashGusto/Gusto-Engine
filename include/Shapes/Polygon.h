@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * A graphical component, that is used to draw a polygon at a given position, with a given number of vertices, drawn with a given color.
+ */
+
 #include "Components/Texture.h"
 #include "Components/Shader.h"
 #include "Components/FileManager.h"

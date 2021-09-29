@@ -1,7 +1,8 @@
 CMakeFiles/game.dir/src/Components/Shader.cpp.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/Shader.cpp \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/Shader.cpp \
  /usr/include/stdc-predef.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/Shader.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/Shader.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/FileManager.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -124,10 +125,9 @@ CMakeFiles/game.dir/src/Components/Shader.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
- /usr/include/c++/9/bits/basic_string.tcc \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/FileManager.h \
- /usr/include/c++/9/iostream /usr/include/c++/9/ostream \
- /usr/include/c++/9/ios /usr/include/c++/9/bits/ios_base.h \
+ /usr/include/c++/9/bits/basic_string.tcc /usr/include/c++/9/iostream \
+ /usr/include/c++/9/ostream /usr/include/c++/9/ios \
+ /usr/include/c++/9/bits/ios_base.h \
  /usr/include/c++/9/bits/locale_classes.h \
  /usr/include/c++/9/bits/locale_classes.tcc \
  /usr/include/c++/9/system_error \

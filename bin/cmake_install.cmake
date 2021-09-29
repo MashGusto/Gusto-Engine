@@ -1,4 +1,4 @@
-# Install script for directory: /home/mashgusto/Dev/C++/OpenGL/Prototype
+# Install script for directory: /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mashgusto/Dev/C++/OpenGL/Prototype/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

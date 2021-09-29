@@ -1,9 +1,12 @@
 #include "Components/Shader.h"
-#include "Components/FileManager.h"
 
 #include <iostream>
 #include <GL/glew.h>
 
+// Constructor for the shader class.
+// Takes in the file path to the vertex shader and the fragment shader.
+// It compiles the glsl code and links the shader program.
+// It deletes both shaders after validation of the program, as they are no longer needed.
 Shader::Shader(std::string vertexShaderPath, std::string fragmentShaderPath)
 {
   program = glCreateProgram();
@@ -19,6 +22,9 @@ Shader::Shader(std::string vertexShaderPath, std::string fragmentShaderPath)
   glUseProgram(program);
 }
 
+// Compiles the shader, by creating a new shader of given type, and applying to it the given source code.
+// It also looks for errors in the compilation.
+// Returns an id to the shader.
 unsigned int Shader::compileShader(unsigned int type, const std::string &source)
 {
   unsigned int id = glCreateShader(type);
@@ -43,6 +49,7 @@ unsigned int Shader::compileShader(unsigned int type, const std::string &source)
   return id;
 }
 
+// Makes the current shader the one to apply on its parent graphical component.
 void Shader::use()
 {
   glUseProgram(program);

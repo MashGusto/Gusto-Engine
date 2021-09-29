@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/mashgusto/Dev/C++/OpenGL/Prototype/include
+C_INCLUDES = -I/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mashgusto/Dev/C++/OpenGL/Prototype/include
+CXX_INCLUDES = -I/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include
 
 CXX_FLAGS = -std=gnu++17
 

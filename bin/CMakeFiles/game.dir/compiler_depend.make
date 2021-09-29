@@ -188,6 +188,7 @@ CMakeFiles/game.dir/src/Components/FileManager.cpp.o: ../src/Components/FileMana
 CMakeFiles/game.dir/src/Components/Shader.cpp.o: ../src/Components/Shader.cpp \
   /usr/include/stdc-predef.h \
   ../include/Components/Shader.h \
+  ../include/Components/FileManager.h \
   /usr/include/c++/9/string \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -337,7 +338,6 @@ CMakeFiles/game.dir/src/Components/Shader.cpp.o: ../src/Components/Shader.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/basic_string.tcc \
-  ../include/Components/FileManager.h \
   /usr/include/c++/9/iostream \
   /usr/include/c++/9/ostream \
   /usr/include/c++/9/ios \
@@ -1209,6 +1209,7 @@ CMakeFiles/game.dir/src/Sprites/Object.cpp.o: ../src/Sprites/Object.cpp \
   /usr/include/c++/9/bits/basic_string.tcc \
   ../include/Components/Shader.h \
   ../include/Components/FileManager.h \
+  ../include/Math/Vector.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
@@ -1369,6 +1370,7 @@ CMakeFiles/game.dir/src/Sprites/Player.cpp.o: ../src/Sprites/Player.cpp \
   /usr/include/c++/9/bits/basic_string.tcc \
   ../include/Components/Shader.h \
   ../include/Components/FileManager.h \
+  ../include/Math/Vector.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
@@ -1377,6 +1379,7 @@ CMakeFiles/game.dir/src/Sprites/Player.cpp.o: ../src/Sprites/Player.cpp \
 CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/stdc-predef.h \
   ../include/Components/Shader.h \
+  ../include/Components/FileManager.h \
   /usr/include/c++/9/string \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -1527,14 +1530,15 @@ CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/basic_string.tcc \
   ../include/Components/Texture.h \
-  ../include/Components/FileManager.h \
   ../include/Sprites/Object.h \
+  ../include/Math/Vector.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
   /usr/include/GLFW/glfw3.h \
   ../include/Sprites/Player.h \
   ../include/Shapes/Rectangle.h \
+  ../include/Math/Color.h \
   /usr/include/c++/9/vector \
   /usr/include/c++/9/bits/stl_construct.h \
   /usr/include/c++/9/bits/stl_uninitialized.h \

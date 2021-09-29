@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * A graphical component, that is used to draw a rectangle at a given position, drawn with a given color.
+ */
+
 #include "Components/Texture.h"
 #include "Components/Shader.h"
 #include "Components/FileManager.h"
@@ -17,10 +21,13 @@ class Rectangle
     float m_r, m_g, m_b;
     Shader m_shader;
     float vertices[24];
+
+    // The arrangement of the vertices of the rectangle
     unsigned int indices[6] = {
       3, 0, 2,
       2, 0, 1
     };
+
     unsigned int vbo;
     unsigned int vao;
     unsigned int ebo;

@@ -6,8 +6,10 @@
 #include <iostream>
 #include <GL/glew.h>
 
+// Creates a texture from an image, also checking for errors.
 Texture::Texture(std::string textureImagePath)
 {
+  // Generate a new texture and configure it
   glGenTextures(1, &texture);
   glBindTexture(GL_TEXTURE_2D, texture);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -19,6 +21,8 @@ Texture::Texture(std::string textureImagePath)
   if(data)
   {
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    
+    // Checks if the given image has a transparency channel or not.
     if(channelCount == 3)
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     if(channelCount == 4)
@@ -29,9 +33,12 @@ Texture::Texture(std::string textureImagePath)
   {
     std::cout << "Failed to load texture: " << textureImagePath << std::endl;
   }
+
+  // Clears the data in the data variable, as it is not needed anymore.
   stbi_image_free(data);
 }
 
+// Returns the texture id of the current texture.
 unsigned int Texture::getTexture()
 {
   return texture;

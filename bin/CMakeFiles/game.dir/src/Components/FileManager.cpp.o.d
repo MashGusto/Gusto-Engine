@@ -1,7 +1,7 @@
 CMakeFiles/game.dir/src/Components/FileManager.cpp.o: \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/src/Components/FileManager.cpp \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/src/Components/FileManager.cpp \
  /usr/include/stdc-predef.h \
- /home/mashgusto/Dev/C++/OpenGL/Prototype/include/Components/FileManager.h \
+ /home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/include/Components/FileManager.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
