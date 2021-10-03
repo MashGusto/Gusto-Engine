@@ -6,8 +6,8 @@
 #include "Sprites/Player.h"
 #include "Shapes/Rectangle.h"
 #include "Shapes/Polygon.h"
-#include "Math/Vector.h"
-#include "Math/Color.h"
+
+#include "Containers/Color.h"
 #include "Physics/Space.h"
 
 // Including external libraries
@@ -16,6 +16,9 @@
 // OpenGL includes
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // Defining the width and height of the window
 #define WIN_WIDTH 600
@@ -48,18 +51,18 @@ int main()
   }
 
   // Setting up FileManager
-  FileManager::setImageDirectory("../assets/images/");
-  FileManager::setShaderDirectory("../include/Shaders/");
+  FileManager::setImageDirectory("../res/images/");
+  FileManager::setShaderDirectory("../res/shaders/");
 
   // Setting up Physics
-  PhysicsSpace space(Vector2f(0.001f, -0.0000981f));
+  PhysicsSpace space(glm::vec2(0.f, 0.f));
 
   // Graphic components of the game
-  Object floor(Vector2f(-1.f, -0.75f), Vector2f(2.f, 0.25f), FileManager::getImage("stone_floor.png"), 0.5f);
-  Player player(Vector2f(0.f, 0.f), Vector2f(0.1f, 0.1f), 0.01f, FileManager::getImage("red_ball.png"), 1.f);
+  Object floor(glm::vec2(-1.f, -0.75f), glm::vec2(2.f, 0.25f), FileManager::getImage("stone_floor.png"), 0.5f);
+  Player player(glm::vec2(0.f, 0.f), glm::vec2(0.1f, 0.1f), 1.f, FileManager::getImage("red_ball.png"), 1.f);
   space.addBody(&player);
-  Rectangle rect(Vector2f(-0.5f, 0.5f), Vector2f(0.25f, 0.25f), Color(0.f, 1.f, 1.f));
-  Polygon circle(Vector2f(0.5f, 0.5f), 0.1f, 25, Color(0.f, 0.f, 1.f));
+  Rectangle rect(glm::vec2(-0.5f, 0.5f), glm::vec2(0.25f, 0.25f), Color(0.f, 1.f, 1.f));
+  Polygon circle(glm::vec2(0.5f, 0.5f), 0.1f, 25, Color(0.f, 0.f, 1.f));
 
   glClearColor(1.f, 1.f, 1.f, 1.f); // Set the background color to white
 
