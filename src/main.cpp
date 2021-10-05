@@ -94,7 +94,7 @@ int main()
     circle.draw(win);
 
     glfwSwapBuffers(win); // Double-buffering
-    glfwPollEvents();     // Process the inputs
+    glfwPollEvents();     // Process the inputs given to the window
   }
 
   glfwTerminate(); // Terminate GLFW after the window is closed
