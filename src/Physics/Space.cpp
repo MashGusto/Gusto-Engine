@@ -4,7 +4,15 @@
 #include <algorithm>
 #include <iostream>
 
-PhysicsSpace::PhysicsSpace(glm::vec2 gravity) : gravity(gravity) {}
+PhysicsSpace::PhysicsSpace(glm::vec2 Gravity) : gravity(Gravity) {}
+
+glm::vec2 PhysicsSpace::getGravity() { return gravity; }
+glm::vec2 PhysicsSpace::getTerminalVelocity() { return terminalVelocity; }
+
+float PhysicsSpace::getDeltaTime() { return dt; }
+
+void PhysicsSpace::setTerminalVelocity(glm::vec2 TerminalVelocity) { terminalVelocity = TerminalVelocity; }
+void PhysicsSpace::setDeltaTime(float DeltaTime) { dt = DeltaTime; }
 
 void PhysicsSpace::addBody(RigidBody *body)
 {
@@ -24,7 +32,7 @@ void PhysicsSpace::removeBody(RigidBody *body)
   bodies.erase(itr);
 }
 
-void PhysicsSpace::step(float dt)
+void PhysicsSpace::step()
 {
   for (RigidBody *body : bodies)
   {
@@ -40,11 +48,16 @@ void PhysicsSpace::step(float dt)
       body->force += body->mass * gravity;
 
       body->velocity += body->force / body->mass * dt;
-      if (body->getPosition().y + body->getScale().y < -1.f || body->collided)
+
+      if (terminalVelocity.y && body->velocity.y < terminalVelocity.y)
+      {
+        body->velocity = terminalVelocity;
+      }
+
+      if (body->getPosition().y + body->getScale().y < -2.f || body->collided)
       {
         body->velocity = glm::vec2(0.f, 0.f);
       }
-      // std::cout << "Velocity: " << body->velocity.x << ", " << body->velocity.y << std::endl;
       body->position += body->velocity * dt;
 
       body->force = glm::vec2(0.f, 0.f);

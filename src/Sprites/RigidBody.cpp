@@ -1,3 +1,4 @@
+#include "Components/Definitions.h"
 #include "Sprites/RigidBody.h"
 
 #include <iostream>
@@ -6,7 +7,6 @@
 // Takes in the position, scale and texture of the movable sprite, and assigns the values to their respective data members.
 RigidBody::RigidBody(glm::vec2 Position, glm::vec2 Scale, RigidBodyType Type) : position(Position), scale(Scale), type(Type), shader(FileManager::getShader("texture.glsl"))
 {
-  std::cout << "Position: " << position.x << ", " << position.y << std::endl;
   // Set the positions of the vertices of the sprite according to its positions.
 
   // Positions
@@ -41,14 +41,16 @@ void RigidBody::checkMovement(GLFWwindow *window)
 {
   if (type == RigidBodyType::DYNAMIC)
   {
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-      position += glm::vec2(0.f, 0.001f);
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS && collided)
+      velocity += glm::vec2(0.f, 1.f);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-      position += glm::vec2(-0.001f, 0.f);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-      position += glm::vec2(0.f, -0.001f);
+      velocity += glm::vec2(-0.01f, 0.f);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS && !collided)
+      velocity += glm::vec2(0.f, -0.01f);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-      position += glm::vec2(0.001f, 0.f);
+      velocity += glm::vec2(0.01f, 0.f);
+
+    position += velocity * DT;
   }
   else if (type == RigidBodyType::STATIC)
     std::cout << "A static body cannot be moved." << std::endl;

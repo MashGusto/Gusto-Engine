@@ -44,7 +44,6 @@ public:
 
   RigidBody(glm::vec2 Position, glm::vec2 Scale, RigidBodyType Type);
 
-  //TODO: Set mass, textureImagePath and textureImageScale
   glm::vec2 getPosition();
   glm::vec2 getScale();
   glm::vec2 getMass();

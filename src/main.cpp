@@ -1,4 +1,5 @@
 // Including Project headers
+#include "Components/Definitions.h"
 #include "Components/Shader.h"
 #include "Components/Texture.h"
 #include "Components/FileManager.h"
@@ -18,10 +19,6 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-// Defining the width and height of the window
-#define WIN_WIDTH 600
-#define WIN_HEIGHT 600
 
 int main()
 {
@@ -54,7 +51,9 @@ int main()
   FileManager::setShaderDirectory("../res/shaders/");
 
   // Setting up Physics
-  PhysicsSpace space(glm::vec2(0.f, -9.81f));
+  PhysicsSpace space(glm::vec2(0.f, -0.981f));
+  space.setTerminalVelocity(glm::vec2(0.f, 0.f));
+  space.setDeltaTime(DT);
 
   // Graphic components of the game
   RigidBody floor(glm::vec2(-1.f, -0.75f), glm::vec2(2.f, 0.25f), RigidBodyType::STATIC);
@@ -86,7 +85,7 @@ int main()
     else
       glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-    space.step((float)1 / 60);
+    space.step();
 
     // Drawing the graphical components
     floor.draw(win);
