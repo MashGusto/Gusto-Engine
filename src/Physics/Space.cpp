@@ -56,7 +56,7 @@ void PhysicsSpace::step()
 
       if (body->getPosition().y + body->getScale().y < -2.f || body->collided)
       {
-        body->velocity = glm::vec2(0.f, 0.f);
+        body->velocity.y = 0.f;
       }
       body->position += body->velocity * dt;
 

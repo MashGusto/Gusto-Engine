@@ -2,7 +2,7 @@
 #include "Sprites/RigidBody.h"
 
 #include <iostream>
-#include <glm/gtc/type_ptr.hpp>
+#include "glm/gtc/type_ptr.hpp"
 
 // Takes in the position, scale and texture of the movable sprite, and assigns the values to their respective data members.
 RigidBody::RigidBody(glm::vec2 Position, glm::vec2 Scale, RigidBodyType Type) : position(Position), scale(Scale), type(Type), shader(FileManager::getShader("texture.glsl"))
@@ -44,11 +44,9 @@ void RigidBody::checkMovement(GLFWwindow *window)
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS && collided)
       velocity += glm::vec2(0.f, 1.f);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-      velocity += glm::vec2(-0.01f, 0.f);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS && !collided)
-      velocity += glm::vec2(0.f, -0.01f);
+      velocity += glm::vec2(-0.001f, 0.f);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-      velocity += glm::vec2(0.01f, 0.f);
+      velocity += glm::vec2(0.001f, 0.f);
 
     position += velocity * DT;
   }

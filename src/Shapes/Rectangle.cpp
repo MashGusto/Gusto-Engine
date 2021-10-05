@@ -1,6 +1,6 @@
 #include "Shapes/Rectangle.h"
 
-#include <glm/gtc/type_ptr.hpp>
+#include "glm/gtc/type_ptr.hpp"
 
 // Takes in the position, scale and color of the rectangle shape, and assigns the values to their respective data members.
 Rectangle::Rectangle(glm::vec2 Position, glm::vec2 Scale, Color Color) : position(Position), scale(Scale), color(Color), shader(FileManager::getShader("color.glsl"))
