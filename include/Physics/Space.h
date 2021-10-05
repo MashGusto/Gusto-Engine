@@ -1,19 +1,19 @@
 #pragma once
 
-#include "Math/Vector.h"
-#include "Sprites/Player.h"
+#include "Sprites/RigidBody.h"
 
 #include <vector>
+#include <glm/glm.hpp>
 
 class PhysicsSpace
 {
-  private:
-    std::vector<Player*> m_bodies;
-    Vector2f m_gravity;
+private:
+  std::vector<RigidBody *> bodies;
+  glm::vec2 gravity;
 
-  public:
-    PhysicsSpace(Vector2f gravity);
-    void addBody(Player* body);
-    void removeBody(Player* body);
-    void step(float dt);
+public:
+  PhysicsSpace(glm::vec2 gravity);
+  void addBody(RigidBody *body);
+  void removeBody(RigidBody *body);
+  void step(float dt);
 };

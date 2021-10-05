@@ -1,37 +1,53 @@
 #include "Physics/Space.h"
+#include "Physics/Collision.h"
 
 #include <algorithm>
 #include <iostream>
 
-PhysicsSpace::PhysicsSpace(Vector2f gravity) : m_gravity(gravity) {}
+PhysicsSpace::PhysicsSpace(glm::vec2 gravity) : gravity(gravity) {}
 
-void PhysicsSpace::addBody(Player *body)
+void PhysicsSpace::addBody(RigidBody *body)
 {
-  m_bodies.push_back(body);
+  bodies.push_back(body);
 }
 
-void PhysicsSpace::removeBody(Player *body)
+void PhysicsSpace::removeBody(RigidBody *body)
 {
   if (!body)
     return;
 
-  auto itr = std::find(m_bodies.begin(), m_bodies.end(), body);
+  auto itr = std::find(bodies.begin(), bodies.end(), body);
 
-  if (itr == m_bodies.end())
+  if (itr == bodies.end())
     return;
 
-  m_bodies.erase(itr);
+  bodies.erase(itr);
 }
 
 void PhysicsSpace::step(float dt)
 {
-  for (Player *body : m_bodies)
+  for (RigidBody *body : bodies)
   {
-    body->m_force += m_gravity * body->m_mass;
+    if (body->type == RigidBodyType::DYNAMIC)
+    {
+      for (RigidBody *body2 : bodies)
+      {
+        if (body != body2)
+        {
+          Collision::checkRectCollision(body, body2);
+        }
+      }
+      body->force += body->mass * gravity;
 
-    body->m_velocity += body->m_force / body->m_mass * dt;
-    body->m_position += body->m_velocity * dt;
+      body->velocity += body->force / body->mass * dt;
+      if (body->getPosition().y + body->getScale().y < -1.f || body->collided)
+      {
+        body->velocity = glm::vec2(0.f, 0.f);
+      }
+      // std::cout << "Velocity: " << body->velocity.x << ", " << body->velocity.y << std::endl;
+      body->position += body->velocity * dt;
 
-    body->m_force = Vector2f(0.f, 0.f);
+      body->force = glm::vec2(0.f, 0.f);
+    }
   }
 }

@@ -1,3 +1,0 @@
-/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles/rebuild_cache.dir
-/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles/edit_cache.dir
-/home/mashgusto/Dev/C++/OpenGL/Gusto-Engine/bin/CMakeFiles/game.dir

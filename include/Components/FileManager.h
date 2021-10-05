@@ -8,15 +8,21 @@
 
 #include <string>
 
+struct ShaderSource
+{
+    std::string vertexSource;
+    std::string fragmentSource;
+};
+
 namespace FileManager
 {
-    
 
-    std::string readFromFile(std::string filePath);
-    
-    void setImageDirectory(const char* imageFolderPath);
-    void setShaderDirectory(const char* shaderFolderPath);
+    std::string readFile(std::string filePath);
+    ShaderSource readShader(std::string filePath);
 
-    std::string getImage(const char* fileName);
-    std::string getShader(const char* fileName);
+    void setImageDirectory(std::string imageFolderPath);
+    void setShaderDirectory(std::string shaderFolderPath);
+
+    std::string getImage(const char *fileName);
+    std::string getShader(const char *fileName);
 }

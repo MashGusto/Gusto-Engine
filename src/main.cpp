@@ -2,8 +2,7 @@
 #include "Components/Shader.h"
 #include "Components/Texture.h"
 #include "Components/FileManager.h"
-#include "Sprites/Object.h"
-#include "Sprites/Player.h"
+#include "Sprites/RigidBody.h"
 #include "Shapes/Rectangle.h"
 #include "Shapes/Polygon.h"
 
@@ -55,14 +54,19 @@ int main()
   FileManager::setShaderDirectory("../res/shaders/");
 
   // Setting up Physics
-  PhysicsSpace space(glm::vec2(0.f, 0.f));
+  PhysicsSpace space(glm::vec2(0.f, -9.81f));
 
   // Graphic components of the game
-  Object floor(glm::vec2(-1.f, -0.75f), glm::vec2(2.f, 0.25f), FileManager::getImage("stone_floor.png"), 0.5f);
-  Player player(glm::vec2(0.f, 0.f), glm::vec2(0.1f, 0.1f), 1.f, FileManager::getImage("red_ball.png"), 1.f);
-  space.addBody(&player);
+  RigidBody floor(glm::vec2(-1.f, -0.75f), glm::vec2(2.f, 0.25f), RigidBodyType::STATIC);
+  floor.setTexture(FileManager::getImage("stone_floor.png"), 0.5f);
+  RigidBody player(glm::vec2(0.f, 0.f), glm::vec2(0.1f, 0.1f), RigidBodyType::DYNAMIC);
+  player.setTexture(FileManager::getImage("red_ball.png"));
+  player.setMass(1.f);
   Rectangle rect(glm::vec2(-0.5f, 0.5f), glm::vec2(0.25f, 0.25f), Color(0.f, 1.f, 1.f));
   Polygon circle(glm::vec2(0.5f, 0.5f), 0.1f, 25, Color(0.f, 0.f, 1.f));
+
+  space.addBody(&floor);
+  space.addBody(&player);
 
   glClearColor(1.f, 1.f, 1.f, 1.f); // Set the background color to white
 

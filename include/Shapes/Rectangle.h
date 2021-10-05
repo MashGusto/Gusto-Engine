@@ -7,35 +7,35 @@
 #include "Components/Texture.h"
 #include "Components/Shader.h"
 #include "Components/FileManager.h"
-#include "Math/Vector.h"
-#include "Math/Color.h"
+
+#include "Containers/Color.h"
 
 #include <vector>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 
 class Rectangle
 {
-  private:
-    Vector2f m_position, m_size;
-    Color m_color;
-    Shader m_shader;
-    float vertices[24];
+private:
+  glm::vec2 position, scale;
+  Color color;
+  Shader shader;
+  float vertices[24];
 
-    // The arrangement of the vertices of the rectangle
-    unsigned int indices[6] = {
+  // The arrangement of the vertices of the rectangle
+  unsigned int indices[6] = {
       3, 0, 2,
-      2, 0, 1
-    };
+      2, 0, 1};
 
-    unsigned int vbo;
-    unsigned int vao;
-    unsigned int ebo;
-  
-  public:
-    Rectangle(Vector2f pos, Vector2f size, Color color);
-    Vector2f getPosition();
-    Vector2f getSize();
-    void move(GLFWwindow *window);
-    void draw(GLFWwindow *window);
+  unsigned int vbo;
+  unsigned int vao;
+  unsigned int ebo;
+
+public:
+  Rectangle(glm::vec2 pos, glm::vec2 scale, Color color);
+  glm::vec2 getPosition();
+  glm::vec2 getScale();
+  void checkMovement(GLFWwindow *window);
+  void draw(GLFWwindow *window);
 };
