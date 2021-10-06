@@ -19,6 +19,8 @@ target_link_libraries(game PUBLIC GL GLU glut GLEW glfw X11 Xxf86vm Xrandr pthre
 endif (UNIX)
 
 if (WIN32)
+set(BUILD_FOR_WIN TRUE)
+
 add_executable(game.exe ${SRC_FILES})
 
 target_include_directories(game.exe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

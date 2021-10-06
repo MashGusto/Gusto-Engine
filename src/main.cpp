@@ -14,8 +14,8 @@
 #include <iostream> // For printing output and taking input
 
 // OpenGL includes
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
@@ -39,10 +39,10 @@ int main()
   }
   glfwMakeContextCurrent(win); // Makes the window the current context
 
-  // Initialize GLEW, and check for errors in the initialization
-  if (glewInit() != GLEW_OK)
+  // Initialize GLAD, and check for errors in the initialization
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
   {
-    std::cout << "Failed to initialize GLEW" << std::endl;
+    std::cout << "Failed to initialize GLAD" << std::endl;
     return -1;
   }
 

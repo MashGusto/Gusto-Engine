@@ -1,7 +1,7 @@
 #include "Components/Shader.h"
 
 #include <iostream>
-#include <GL/glew.h>
+#include "glad/glad.h"
 
 glm::mat4 Shader::projection = glm::ortho(-2.f, 2.f, -2.f, 2.f, -1.f, 1.f);
 
