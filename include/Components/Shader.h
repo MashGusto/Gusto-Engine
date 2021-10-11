@@ -23,6 +23,7 @@ private:
 public:
   static glm::mat4 projection;
 
+  Shader() {}
   Shader(std::string shaderPath);
   void use();
   unsigned int getID();

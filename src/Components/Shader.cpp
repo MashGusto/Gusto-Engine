@@ -3,6 +3,24 @@
 #include <iostream>
 #include "glad/glad.h"
 
+// Including headers for alloca function
+// Solution from https://github.com/ocornut/imgui/issues/1917#issuecomment-401591478
+#if defined(__CYGWIN__)
+#include <alloca.h> // alloca
+#endif              //__CYGWIN__
+#if !defined(alloca)
+#ifdef _WIN32
+#include <malloc.h> // alloca
+#if !defined(alloca)
+#define alloca _alloca // for clang with MS Codegen
+#endif
+#elif defined(__GLIBC__) || defined(__sun)
+#include <alloca.h> // alloca
+#else
+#include <stdlib.h> // alloca
+#endif
+#endif
+
 glm::mat4 Shader::projection = glm::ortho(-2.f, 2.f, -2.f, 2.f, -1.f, 1.f);
 
 // Constructor for the shader class.

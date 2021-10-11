@@ -53,6 +53,6 @@ public:
   void setMass(float mass);
   void setTexture(std::string textureImagePath, float textureImageScale = 1.f);
 
-  void checkMovement(GLFWwindow *window);
+  void updateMovement(GLFWwindow *window);
   void draw(GLFWwindow *window);
 };

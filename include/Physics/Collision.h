@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sprites/RigidBody.h"
+#include "Graphics/RigidBody.h"
 
 #include <iostream>
 #include "glm/glm.hpp"

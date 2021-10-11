@@ -3,9 +3,8 @@
 #include "Components/Shader.h"
 #include "Components/Texture.h"
 #include "Components/FileManager.h"
-#include "Sprites/RigidBody.h"
-#include "Shapes/Rectangle.h"
-#include "Shapes/Polygon.h"
+#include "Graphics/RigidBody.h"
+#include "Graphics/Shape.h"
 
 #include "Containers/Color.h"
 #include "Physics/Space.h"
@@ -61,17 +60,24 @@ int main()
   RigidBody player(glm::vec2(0.f, 0.f), glm::vec2(0.1f, 0.1f), RigidBodyType::DYNAMIC);
   player.setTexture(FileManager::getImage("red_ball.png"));
   player.setMass(1.f);
+
+  std::vector<Shape *> shapes;
   Rectangle rect(glm::vec2(-0.5f, 0.5f), glm::vec2(0.25f, 0.25f), Color(0.f, 1.f, 1.f));
+  shapes.push_back(&rect);
   Polygon circle(glm::vec2(0.5f, 0.5f), 0.1f, 25, Color(0.f, 0.f, 1.f));
+  shapes.push_back(&circle);
 
   space.addBody(&floor);
   space.addBody(&player);
 
-  glClearColor(1.f, 1.f, 1.f, 1.f); // Set the background color to white
+  glClearColor(0.f, 0.f, 0.f, 1.f); // Set the background color to white
 
   // Enable background transparency in loading png textures
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+  unsigned int frameCount = 0;
+  double lastTime = glfwGetTime();
 
   // Game loop
   while (!glfwWindowShouldClose(win))
@@ -85,6 +91,20 @@ int main()
     else
       glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
+    if (glfwGetKey(win, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && glfwGetKey(win, GLFW_KEY_C) == GLFW_PRESS)
+      system("clear");
+
+    for (Shape *shape : shapes)
+    {
+      if (shape->selected)
+      {
+        Shape::Selected = true;
+        break;
+      }
+      else
+        Shape::Selected = false;
+    }
+
     space.step();
 
     // Drawing the graphical components
@@ -95,6 +115,11 @@ int main()
 
     glfwSwapBuffers(win); // Double-buffering
     glfwPollEvents();     // Process the inputs given to the window
+
+    while (glfwGetTime() < lastTime + 1.f / (float)60.f)
+      continue;
+
+    lastTime += 1.f / (float)60.f;
   }
 
   glfwTerminate(); // Terminate GLFW after the window is closed

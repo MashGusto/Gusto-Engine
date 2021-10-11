@@ -1,5 +1,5 @@
 #include "Components/Definitions.h"
-#include "Sprites/RigidBody.h"
+#include "Graphics/RigidBody.h"
 
 #include <iostream>
 #include "glm/gtc/type_ptr.hpp"
@@ -37,18 +37,33 @@ RigidBody::RigidBody(glm::vec2 Position, glm::vec2 Scale, RigidBodyType Type) : 
 }
 
 // Move the sprite according to keyboard input(WASD)
-void RigidBody::checkMovement(GLFWwindow *window)
+void RigidBody::updateMovement(GLFWwindow *window)
 {
   if (type == RigidBodyType::DYNAMIC)
   {
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS && collided)
-      velocity += glm::vec2(0.f, 1.f);
+      velocity += glm::vec2(0.f, 0.75f);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-      velocity += glm::vec2(-0.001f, 0.f);
+      velocity -= glm::vec2(0.025f, 0.f);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-      velocity += glm::vec2(0.001f, 0.f);
+      velocity += glm::vec2(0.025f, 0.f);
 
     position += velocity * DT;
+
+    if (velocity.x > 0.f)
+    {
+      if (collided)
+        velocity -= glm::vec2(0.005f, 0.f);
+      else
+        velocity -= glm::vec2(0.001f, 0.f);
+    }
+    if (velocity.x < 0.f)
+    {
+      if (collided)
+        velocity += glm::vec2(0.005f, 0.f);
+      else
+        velocity += glm::vec2(0.001f, 0.f);
+    }
   }
   else if (type == RigidBodyType::STATIC)
     std::cout << "A static body cannot be moved." << std::endl;
@@ -60,8 +75,8 @@ void RigidBody::draw(GLFWwindow *window)
 {
   if (type == RigidBodyType::DYNAMIC)
   {
-    // Takes in keyboard input, and calls the checkMovement function.
-    checkMovement(window);
+    // Takes in keyboard input, and calls the updateMovement function.
+    updateMovement(window);
 
     // Reassigns the  vertex positions of the sprite, according to current position.
     vertices[0] = position.x, vertices[1] = position.y;
