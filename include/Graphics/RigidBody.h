@@ -4,9 +4,9 @@
  * A graphical component, that is used to draw a movable sprite at a given position, drawn with a given texture.
  */
 
-#include "Components/Texture.h"
-#include "Components/Shader.h"
-#include "Components/FileManager.h"
+#include "System/Texture.h"
+#include "System/Shader.h"
+#include "System/FileManager.h"
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
@@ -53,6 +53,6 @@ public:
   void setMass(float mass);
   void setTexture(std::string textureImagePath, float textureImageScale = 1.f);
 
-  void updateMovement(GLFWwindow *window);
-  void draw(GLFWwindow *window);
+  void updateMovement();
+  void draw();
 };

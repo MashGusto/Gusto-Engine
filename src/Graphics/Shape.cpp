@@ -1,10 +1,13 @@
 #include "Graphics/Shape.h"
+#include "System/Definitions.h"
+#include "System/Window.h"
 
 #define _USE_MATH_DEFINES
 #include <cmath>
 
 #include <iostream>
 #include "glm/gtc/type_ptr.hpp"
+#include "imgui/imgui.h"
 
 bool Shape::Selected = false;
 
@@ -47,44 +50,49 @@ Rectangle::Rectangle(glm::vec2 Position, glm::vec2 Scale, Color Color)
 }
 
 // Move the rectangle according to keyboard input(WASD)
-void Rectangle::updateMovement(GLFWwindow *window)
+void Rectangle::updateMovement()
 {
     if (selected)
     {
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            position += glm::vec2(0.f, 0.01f);
-        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            position -= glm::vec2(0.01f, 0.f);
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            position -= glm::vec2(0.f, 0.01f);
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            position += glm::vec2(0.01f, 0.f);
+        if (glfwGetKey(Window::window, GLFW_KEY_W) == GLFW_PRESS)
+            position += glm::vec2(0.f, 0.1f);
+        if (glfwGetKey(Window::window, GLFW_KEY_A) == GLFW_PRESS)
+            position -= glm::vec2(0.1f, 0.f);
+        if (glfwGetKey(Window::window, GLFW_KEY_S) == GLFW_PRESS)
+            position -= glm::vec2(0.f, 0.1f);
+        if (glfwGetKey(Window::window, GLFW_KEY_D) == GLFW_PRESS)
+            position += glm::vec2(0.1f, 0.f);
     }
 }
 
 // Draw the rectangle on to the screen, on the rectangle's current position.
 // To be called each game frame.
-void Rectangle::draw(GLFWwindow *window)
+void Rectangle::draw()
 {
     // Takes in keyboard input, and calls the updateMovement function.
-    updateMovement(window);
+    updateMovement();
 
-    double mouseX, mouseY;
     // Checks if the left mouse button in held down, and the mouse pointer is inside the rectangle shape.
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+    if (glfwGetMouseButton(Window::window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
     {
-        int windowWidth, windowHeight;
-        glfwGetWindowSize(window, &windowWidth, &windowHeight);
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-        mouseX = -2.f + 4.f * mouseX / windowWidth;
-        mouseY = 2.f - 4.f * mouseY / windowHeight;
-        if (mouseX < position.x + scale.x && mouseX > position.x - scale.x && mouseY < position.y + scale.y && mouseY > position.y - scale.x)
+        double mx, my;
+        glfwGetCursorPos(Window::window, &mx, &my);
+        mx = (float)-Window::width / (float)Shader::getProjectionScale() + (float)Window::width / ((float)Shader::getProjectionScale() / 2) * mx / Window::width;
+        my = (float)Window::height / (float)Shader::getProjectionScale() - (float)Window::height / ((float)Shader::getProjectionScale() / 2) * (my + Window::cursorYOffset) / (float)Window::height;
+        if (mx < position.x + scale.x && mx > position.x && my > position.y - scale.y && my < position.y)
         {
+            ImGui::Text("Rect collision!");
             selected = true;
             Selected = true;
         }
         else
             selected = false;
+    }
+
+    if (selected)
+    {
+        ImGui::Text("Position: %f, %f", position.x, position.y);
+        ImGui::Text("Scale:    %f, %f", scale.x, scale.y);
     }
 
     // Repositions the vertices, according to current position.
@@ -111,7 +119,7 @@ void Rectangle::draw(GLFWwindow *window)
     // Make the rectangle's shader the shader to use to draw it.
     shader.use();
     unsigned int transformLocation = glGetUniformLocation(shader.getID(), "transform");
-    glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::projection));
+    glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::getProjection()));
 
     // Rebuffer the rectangle, and reassign the vertex attribute values.
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -179,44 +187,48 @@ Polygon::Polygon(glm::vec2 Position, float Radius, unsigned int VertexCount, Col
 }
 
 // Move the polygon, by the method of dragging with mouse.
-void Polygon::updateMovement(GLFWwindow *window)
+void Polygon::updateMovement()
 {
     if (selected)
     {
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            position += glm::vec2(0.f, 0.01f);
-        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            position -= glm::vec2(0.01f, 0.f);
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            position -= glm::vec2(0.f, 0.01f);
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            position += glm::vec2(0.01f, 0.f);
+        if (glfwGetKey(Window::window, GLFW_KEY_W) == GLFW_PRESS)
+            position += glm::vec2(0.f, 0.1f);
+        if (glfwGetKey(Window::window, GLFW_KEY_A) == GLFW_PRESS)
+            position -= glm::vec2(0.1f, 0.f);
+        if (glfwGetKey(Window::window, GLFW_KEY_S) == GLFW_PRESS)
+            position -= glm::vec2(0.f, 0.1f);
+        if (glfwGetKey(Window::window, GLFW_KEY_D) == GLFW_PRESS)
+            position += glm::vec2(0.1f, 0.f);
     }
 }
 
 // Draws the polygon, at its current position.
 // To be called each game frame.
-void Polygon::draw(GLFWwindow *window)
+void Polygon::draw()
 {
     // Takes in mouse input, and calls the updateMovement function.
-    updateMovement(window);
+    updateMovement();
 
-    double mouseX, mouseY;
     // Checks if the left mouse button in held down, and the mouse pointer is inside the polygon shape.
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+    if (glfwGetMouseButton(Window::window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
     {
-        int windowWidth, windowHeight;
-        glfwGetWindowSize(window, &windowWidth, &windowHeight);
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-        mouseX = -2.f + 4.f * mouseX / windowWidth;
-        mouseY = 2.f - 4.f * mouseY / windowHeight;
-        if (mouseX < position.x + radius && mouseX > position.x - radius && mouseY < position.y + radius && mouseY > position.y - radius)
+        double mx, my;
+        glfwGetCursorPos(Window::window, &mx, &my);
+        mx = (float)-Window::width / (float)Shader::getProjectionScale() + (float)Window::width / ((float)Shader::getProjectionScale() / 2) * mx / Window::width;
+        my = (float)Window::height / (float)Shader::getProjectionScale() - (float)Window::height / ((float)Shader::getProjectionScale() / 2) * (my + Window::cursorYOffset) / (float)Window::height;
+        if (mx < position.x + radius && mx > position.x - radius && my < position.y + radius && my > position.y - radius)
         {
             selected = true;
             Selected = true;
         }
         else
             selected = false;
+    }
+
+    if (selected)
+    {
+        ImGui::Text("Position: %f, %f", position.x, position.y);
+        ImGui::Text("Radius:   %f", radius);
     }
 
     // Repositions the vertices, according to current position.
@@ -251,7 +263,7 @@ void Polygon::draw(GLFWwindow *window)
     // Rebuffer the positions, and set its shader to be used to render the shape.
     shader.use();
     unsigned int transformLocation = glGetUniformLocation(shader.getID(), "transform");
-    glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::projection));
+    glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::getProjection()));
 
     // Rebuffers the polygon, and reassigns the vertex attribute values.
     glBindBuffer(GL_ARRAY_BUFFER, vbo);

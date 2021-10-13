@@ -1,5 +1,7 @@
-#include "Components/Definitions.h"
+#include "System/Definitions.h"
 #include "Graphics/RigidBody.h"
+#include "Graphics/Shape.h"
+#include "System/Window.h"
 
 #include <iostream>
 #include "glm/gtc/type_ptr.hpp"
@@ -37,32 +39,32 @@ RigidBody::RigidBody(glm::vec2 Position, glm::vec2 Scale, RigidBodyType Type) : 
 }
 
 // Move the sprite according to keyboard input(WASD)
-void RigidBody::updateMovement(GLFWwindow *window)
+void RigidBody::updateMovement()
 {
-  if (type == RigidBodyType::DYNAMIC)
+  if (type == RigidBodyType::DYNAMIC && !Shape::Selected)
   {
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS && collided)
-      velocity += glm::vec2(0.f, 0.75f);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-      velocity -= glm::vec2(0.025f, 0.f);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-      velocity += glm::vec2(0.025f, 0.f);
+    if (glfwGetKey(Window::window, GLFW_KEY_W) == GLFW_PRESS && collided)
+      velocity += glm::vec2(0.f, 5.f);
+    if (glfwGetKey(Window::window, GLFW_KEY_A) == GLFW_PRESS)
+      velocity -= glm::vec2(0.25f, 0.f);
+    if (glfwGetKey(Window::window, GLFW_KEY_D) == GLFW_PRESS)
+      velocity += glm::vec2(0.25f, 0.f);
 
     position += velocity * DT;
 
     if (velocity.x > 0.f)
     {
       if (collided)
-        velocity -= glm::vec2(0.005f, 0.f);
+        velocity -= glm::vec2(0.05f, 0.f);
       else
-        velocity -= glm::vec2(0.001f, 0.f);
+        velocity -= glm::vec2(0.01f, 0.f);
     }
     if (velocity.x < 0.f)
     {
       if (collided)
-        velocity += glm::vec2(0.005f, 0.f);
+        velocity += glm::vec2(0.05f, 0.f);
       else
-        velocity += glm::vec2(0.001f, 0.f);
+        velocity += glm::vec2(0.01f, 0.f);
     }
   }
   else if (type == RigidBodyType::STATIC)
@@ -71,12 +73,12 @@ void RigidBody::updateMovement(GLFWwindow *window)
 
 // Draws the sprite to the window.
 // To be called each game frame.
-void RigidBody::draw(GLFWwindow *window)
+void RigidBody::draw()
 {
   if (type == RigidBodyType::DYNAMIC)
   {
     // Takes in keyboard input, and calls the updateMovement function.
-    updateMovement(window);
+    updateMovement();
 
     // Reassigns the  vertex positions of the sprite, according to current position.
     vertices[0] = position.x, vertices[1] = position.y;
@@ -92,7 +94,7 @@ void RigidBody::draw(GLFWwindow *window)
   // Make the sprite's shader the shader to use to draw it.
   shader.use();
   unsigned int transformLocation = glGetUniformLocation(shader.getID(), "transform");
-  glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::projection));
+  glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(Shader::getProjection()));
 
   glBindTexture(GL_TEXTURE_2D, texture);
   glBindVertexArray(vao);

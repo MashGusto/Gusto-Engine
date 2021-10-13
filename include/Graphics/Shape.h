@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Components/Texture.h"
-#include "Components/Shader.h"
-#include "Components/FileManager.h"
-#include "Containers/Color.h"
+#include "System/Texture.h"
+#include "System/Shader.h"
+#include "System/FileManager.h"
+#include "System/Color.h"
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
@@ -30,8 +30,8 @@ public:
     Shape() {}
 
     virtual glm::vec2 getPosition();
-    virtual void updateMovement(GLFWwindow *window) {}
-    virtual void draw(GLFWwindow *window) {}
+    virtual void updateMovement() {}
+    virtual void draw() {}
 };
 
 class Rectangle : public Shape
@@ -44,8 +44,8 @@ public:
 
     glm::vec2 getPosition();
     glm::vec2 getScale();
-    void updateMovement(GLFWwindow *window);
-    void draw(GLFWwindow *window);
+    void updateMovement();
+    void draw();
 };
 
 class Polygon : public Shape
@@ -63,6 +63,6 @@ public:
 
     glm::vec2 getPosition();
     float getRadius();
-    void updateMovement(GLFWwindow *window);
-    void draw(GLFWwindow *window);
+    void updateMovement();
+    void draw();
 };
