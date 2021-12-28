@@ -15,14 +15,16 @@ If your graphics driver doesn't support OpenGL 3.3 or higher, this might make it
 ```
 cd bin
 export MESA_GL_VERSION_OVERRIDE=3.3
-LIBGL_ALWAYS_SOFTWARE=1 ./game
+LIBGL_ALWAYS_SOFTWARE=1 ./linux
 ```
 
 ## Compiling the code
 The code is pre-compiled into the game executable file, but if you maybe want to change the code, recompile it with the following commands:
+
+Linux:
 ```
 cd bin
 cmake ..
 make
-./game
+./linux
 ```
